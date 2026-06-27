@@ -2,10 +2,285 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>나의 첫 github.io 페이지</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가산디지털단지역 구내식당 메뉴</title>
+    <style>
+        /* 기본 스타일 초기화 및 배경 설정 */
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        /* 상단 타이틀 스타일 */
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #111;
+        }
+
+        /* 가로 3개, 세로 2개 배치를 위한 Grid 설정 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 가로 3등분 */
+            gap: 25px; /* 카드 사이의 간격 */
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 식당 카드 개별 스타일 */
+        .cafeteria-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #e9ecef;
+        }
+
+        /* 구내식당명 */
+        .name {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            color: #007bff;
+        }
+
+        /* 주소 */
+        .address {
+            font-size: 13px;
+            color: #666;
+            margin: 0 0 15px 0;
+            line-height: 1.4;
+        }
+		
+		/* 주소 링크 */
+		.address-link {
+			color: #666; /* 기본 주소 색상 (회색) */
+			text-decoration: none;
+			transition: color 0.2s ease; /* 색상이 부드럽게 변하는 효과 (선택사항) */
+		}
+		
+		.address-link:hover {
+			color: #111;
+			text-decoration: underline;
+		}
+
+        /* iframe 스타일 정의 */
+        .channel-frame {
+            width: 100%;
+            height: 550px; /* 세로 크기는 화면에 맞춰 조절 */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+
+        /* 화면이 좁아지는 모바일 환경을 위한 반응형 조절 */
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 패드에서는 가로 2개 */
+            }
+        }
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 모바일에서는 가로 1개로 세로 정렬 */
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>안녕하세요! 반가워요. 👋</h1>
-    <p>저의 첫 GitHub Pages 사이트에 오신 것을 환영합니다!</p>
+
+    <div class="title">🍱 가산디지털단지역 근처 구내식당 카카오톡채널</div>
+
+    <div class="grid-container">
+
+        <div class="cafeteria-card">
+            <h2 class="name">그래도 집밥</h2>
+            <p class="address">
+				📍
+				<a class="address-link" href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdQSp,2AIqjX,%EC%9D%B4%EC%95%A4%EC%94%A8%EB%93%9C%EB%A6%BC%ED%83%80%EC%9B%8C7%EC%B0%A8,18976980,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					서울 금천구 디지털로9길 46 이앤씨드림타워7차 지하1층
+				</a>
+			</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_xgxlXKG"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				다시봄
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdtkV,2AIq3l,%EA%B0%80%EC%82%B0%EC%96%B4%EB%B0%98%EC%9B%8C%ED%81%AC,1823111605,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털2로 135 가산어반워크 2층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_xhNExmn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				더소울푸드
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdFkC,2AIqhz,%EC%9A%B0%EB%A6%BC%EB%9D%BC%EC%9D%B4%EC%98%A8%EC%8A%A4%EB%B0%B8%EB%A6%ACB%EB%8F%99,18981946,PLACE_POI/-/walk?c=19.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 168 우림라이온스밸리 B동 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_NHxgEn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				더푸드스케치
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdByS,2AIxEJ,%EC%84%9C%EC%9A%B8%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B81%EB%A1%9C%20196,09545101,ADDRESS_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 196 에이스테크노타워10차 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_nFfwj"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				돈토
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdCHZ,2AIlic,%EC%97%90%EC%9D%B4%EC%8A%A4%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C%ED%83%80%EC%9B%8C3%EC%B0%A8,436127729,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 145 에이스하이엔드타워3차 지하1층</p>
+            <iframe class="channel-frame" src="http://pf.kakao.com/_Gxjxcbxj"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				대성디폴리스 구내식당
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdqxQ,2AIpVf,%EB%94%94%ED%8F%B4%EB%A6%AC%EC%8A%A4%EC%A7%80%EC%8B%9D%EC%82%B0%EC%97%85%EC%84%BC%ED%84%B0,18979316,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 서부샛길 606 대성디폴리스 지식산업센터 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_iyscG"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				라온푸드
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdAKO,2AIqx9,%EC%84%9C%EC%9A%B8%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B81%EB%A1%9C%20165,09545101,ADDRESS_POI/-/walk?c=18.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 165 가산비즈니스센터 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_Rxkrxfn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				마이푸드
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdNjq,2AIh9q,%EB%B2%BD%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%B0%B8%EB%A6%AC5%EC%B0%A8,18981320,PLACE_POI/-/walk?c=16.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 벚꽃로 244 벽산 디지털 밸리 5차 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_xaAvxlG"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				미가푸드빌 대륭19차
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdEij,2AIcc2,%EC%84%9C%EC%9A%B8%EC%8B%9C%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EB%8C%80%EB%A5%AD%ED%85%8C%ED%81%AC%EB%85%B8%ED%83%80%EC%9A%B419%EC%B0%A8%20%EC%A0%84%EA%B8%B0%EC%B0%A8%EC%B6%A9%EC%A0%84%EC%86%8C,1671568566,PLACE_POI/-/walk?c=16.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털2로 70 대륭테크노타운19차 지하1층</p>
+            <iframe class="channel-frame" src="http://pf.kakao.com/_yTbHb"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				미가푸드빌 에이스8차
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdMDB,2AI8Tz,%EC%84%9C%EC%9A%B8%20%EA%B8%88%EC%B2%9C%EA%B5%AC%20%EC%97%90%EC%9D%B4%EC%8A%A4%ED%95%98%EC%9D%B4%EC%97%94%EB%93%9C%ED%83%80%EC%9B%8C8%EC%B0%A8%20%EC%B0%A8%EC%A7%80%EB%B9%84%201%20%EC%A0%84%EA%B8%B0%EC%B0%A8%EC%B6%A9%EC%A0%84%EC%86%8C,1418802357,PLACE_POI/-/walk?c=15.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 84 에이스하이엔드타워8차 지하1층</p>
+            <iframe class="channel-frame" src="http://pf.kakao.com/_icxfpxj"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				미가stx
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdIof,2AIiGg,STXV%ED%83%80%EC%9B%8C,19575296,PLACE_POI/-/walk?c=16.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울특별시 금천구 가산디지털1로 128 STX V-TOWER 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_DWnxlxj"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				밥(온) 구내식당
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdspP,2AIrCm,%EA%B0%80%EC%82%B0%EC%96%B4%EB%B0%98%EC%9B%8C%ED%81%AC2,1003114149,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털2로 143 가산어반워크2 2층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_mYxfen"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				스타밸리푸드포유
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdKQV,2AIuaL,%EC%8A%A4%ED%83%80%EB%B0%B8%EB%A6%AC,18976994,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 디지털로9길 99 스타밸리 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_axkixdn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				씽씽푸드
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdFHm,2AImfD,%EB%8C%80%EB%A5%AD%ED%85%8C%ED%81%AC%EB%85%B8%ED%83%80%EC%9A%B422%EC%B0%A8,1175928783,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털1로 146 대륭테크노타운 22차 1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_gdqxdn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				아이밀
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdwpt,2AIssX,%ED%98%84%EB%8C%80%ED%85%8C%EB%9D%BC%ED%83%80%EC%9B%8C%20%EA%B0%80%EC%82%B0DK,1276717932,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 가산디지털2로 144 현대테라타워 가산DK 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_vygYn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				쿠킹스토리
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdOFI,2AIsCE,%EB%8C%80%EB%A5%AD%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%83%80%EC%9B%8C5%EC%B0%A8,18977159,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 디지털로9길 68 대륭포스트타워5차 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_xnBzGn"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				쿡플러스
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdOFI,2AIsCE,%EB%8C%80%EB%A5%AD%ED%8F%AC%EC%8A%A4%ED%8A%B8%ED%83%80%EC%9B%8C5%EC%B0%A8,18977159,PLACE_POI/-/walk?c=17.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 디지털로9길 68 대륭포스트타워5차 지하1층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_XBiQxj"></iframe>
+        </div>
+		<div class="cafeteria-card">
+            <h2 class="name">
+				퍼블릭가산 구내식당
+				<a href="https://map.naver.com/p/directions/3zdEZf,2AIqV7,%EA%B0%80%EC%82%B0%EB%94%94%EC%A7%80%ED%84%B8%EB%8B%A8%EC%A7%80%EC%97%AD%207%ED%98%B8%EC%84%A0,746,SUBWAY_STATION/3zdOF3,2AIcZ4,%ED%8D%BC%EB%B8%94%EB%A6%AD%EA%B0%80%EC%82%B0C%EB%8F%99,1713072974,PLACE_POI/-/walk?c=15.00,0,0,0,dh" target="_blank">
+					[길찾기]
+				</a>
+			</h2>
+            <p class="address">📍 서울 금천구 디지털로 178 퍼블릭가산 c동 3층</p>
+            <iframe class="channel-frame" src="https://pf.kakao.com/_ECNfn"></iframe>
+        </div>
+
+    </div>
+
 </body>
 </html>
