@@ -22,20 +22,25 @@
             color: #333;
         }
 
-        /* 상단 타이틀 스타일 */
         .title {
             text-align: center;
-            font-size: 23px;
-            font-weight: bold;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             color: #111;
         }
-		
+
+        .main-title {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: -0.5px;
+        }
+
 		.date {
-			font-size: 18px;
-			color: #777;
-			margin-top: 8px;
-		}
+            font-size: 16px;
+            font-weight: bold;
+            color: #2b2d42;
+            margin-top: 5px;
+            letter-spacing: 0.5px;
+        }
 
         /* 가로 3개, 세로 2개 배치를 위한 Grid 설정 */
         .grid-container {
@@ -64,12 +69,12 @@
             margin: 0 0 8px 0;
             color: #007bff;
         }
-		
+
 		.name-link {
             color: #007bff; /* 기본 주소 색상 (회색) */
 			text-decoration: none;
         }
-		
+
 		.name-link:hover {
 			text-decoration: underline;
 		}
@@ -81,14 +86,14 @@
             margin: 0 0 15px 0;
             line-height: 1.4;
         }
-		
+
 		/* 주소 링크 */
 		.address-link {
 			color: #666; /* 기본 주소 색상 (회색) */
 			text-decoration: none;
 			transition: color 0.2s ease; /* 색상이 부드럽게 변하는 효과 (선택사항) */
 		}
-		
+
 		.address-link:hover {
 			color: #111;
 			text-decoration: underline;
@@ -115,21 +120,24 @@
             }
         }
 
-        .quote-text {
-			font-size: 15px;
-			font-weight: bold;
-			line-height: 1.6;
-			color: #495057;
-			margin: 0;
-		}
+        .quote-middle {
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            color: #777777;
+            margin: 10px auto 12px auto;
+            width: fit-content;
+            letter-spacing: -0.5px;
+        }
     </style>
 </head>
 <body>
 
 <div class="title">
-	🍱 가산디지털단지역 근처 구내식당 메뉴
-	<div class="date">2026년 07월 03일 (금)</div>
-    <div style="display: none;">20260703054120</div>
+    <div class="main-title">🍱 가산디지털단지역 근처 구내식당 메뉴</div>
+    <div class="quote-middle">"배부르다는 말은 음식을 그만 먹겠다는 뜻이 아니라, 이제 맛을 음미하며 천천히 먹겠다는 뜻이다."</div>
+    <div class="date">2026년 07월 03일 (금)</div>
+    <div style="display: none;">20260703132052</div>
 </div>
 
 <div class="grid-container">
@@ -168,7 +176,7 @@
 					서울 금천구 가산디지털1로 168 우림라이온스밸리 B동 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/eecJkn/dJMcajv3SGq/5b830H3dAm3EqCA1qVjkJk/img_m.jpg' alt='더소울푸드 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/M0nSj/dJMcad3Cpcu/D2zKoBQPVzcVt0BW1FLi00/img_m.jpg' alt='더소울푸드 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_nFfwj' target='_blank'>더푸드스케치</a></h2>
@@ -177,7 +185,7 @@
 					서울 금천구 가산디지털1로 196 에이스테크노타워10차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/rA6Go/dJMcacwWbYk/jtnLuSokS6z5WXmtKf03p1/img_m.jpg' alt='더푸드스케치 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/vKZ0N/dJMcaccCv2N/R0YjeTdK4meDqSXLMgs8S1/img_m.jpg' alt='더푸드스케치 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_Rxkrxfn' target='_blank'>라온푸드</a></h2>
@@ -195,7 +203,7 @@
 					서울 금천구 벚꽃로 244 벽산 디지털 밸리 5차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/bn0JuH/dJMcahdXKO8/Ig58xcaqxfzUWKriThNXD0/img_m.jpg' alt='마이푸드 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/WMvra/dJMcabrgPQw/5kq8I50XZaxMNkeuQhlBb0/img_m.jpg' alt='마이푸드 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_DWnxlxj' target='_blank'>미가stx</a></h2>
@@ -204,7 +212,7 @@
 					서울특별시 금천구 가산디지털1로 128 STX V-TOWER 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/O8eTh/dJMcad3B0nF/rgnF4TJkY9k9wXFQNTcxYk/img_m.jpg' alt='미가stx - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/dgtxdK/dJMcabxZzIq/FFcv6GQDJc5L6llYgywNlK/img_m.jpg' alt='미가stx - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_yTbHb' target='_blank'>미가푸드빌 대륭19차</a></h2>
@@ -222,7 +230,7 @@
 					서울 금천구 가산디지털1로 84 에이스하이엔드타워8차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/byaS7O/dJMcahLLaxW/L5rthxpsxuwuKSb6Py8lh0/img_m.jpg' alt='미가푸드빌 에이스8차 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/b0aq2g/dJMcadilEm0/qH2tAzL8qILK7k0rmFKJx0/img_m.jpg' alt='미가푸드빌 에이스8차 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_bXxkxhb' target='_blank'>바른식탁</a></h2>
@@ -240,7 +248,7 @@
 					서울 금천구 가산디지털2로 143 가산어반워크2 2층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/emBiZj/dJMcabEKXXx/uprYzsEEc9gfoJ97cntw5k/img_m.jpg' alt='밥(온) - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/WamXP/dJMcacXZ1kt/TUkJPgJDgI77NgtcIuHKsk/img_m.jpg' alt='밥(온) - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_axkixdn' target='_blank'>스타밸리푸드포유</a></h2>
@@ -249,7 +257,7 @@
 					서울 금천구 디지털로9길 99 스타밸리 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/bCZuj2/dJMcahStzbA/pi1NUCvrf1H890GM84QGRk/img_m.jpg' alt='스타밸리푸드포유 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/ITbIO/dJMcabxYX8J/oFmV5wQ3ZCkDceoVoMRGN0/img_m.jpg' alt='스타밸리푸드포유 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_gdqxdn' target='_blank'>씽씽푸드</a></h2>
@@ -267,7 +275,7 @@
 					서울 금천구 가산디지털2로 144 현대테라타워 가산DK 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/g0lHz/dJMcabkxv4j/sQPf4dbzlbpChihDNKWkS1/img_m.jpg' alt='아이밀 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/p6w56/dJMcahLLtOM/TyqCQIiXMaQfVkq4JEBQ61/img_m.jpg' alt='아이밀 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_xnBzGn' target='_blank'>쿠킹스토리</a></h2>
@@ -285,7 +293,7 @@
 					서울 금천구 디지털로9길 68 대륭포스트타워5차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/vlgwH/dJMcahyfnpU/pPyb1ZcShlN1LWUWimApl1/img_m.jpg' alt='쿡플러스 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/colgVb/dJMcaiqmI0z/QFks3LWU28qH38duQtFLyk/img_m.jpg' alt='쿡플러스 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_ECNfn' target='_blank'>퍼블릭가산 구내식당</a></h2>
@@ -313,21 +321,16 @@
             </script>
         </div>
     </div>
-    <div class="cafeteria-card">
-		<div style="font-size: 24px; text-align: center; margin-bottom: 8px;">🍚
-			<p class="quote-text">기분이 저기압일 때는 고기 앞으로 가라.</p>
-		</div>
-	</div>
 
 </div>
 
 <script src="//wcs.pstatic.net/wcslog.js" type="text/javascript"></script>
 <script type="text/javascript">
-if(!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "1989851bd0c1050";
-if(window.wcs) {
-wcs_do();
-}
+    if(!wcs_add) var wcs_add = {};
+    wcs_add["wa"] = "1989851bd0c1050";
+    if(window.wcs) {
+    wcs_do();
+    }
 </script>
 <script async crossorigin="anonymous"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8209977600304228"></script>
