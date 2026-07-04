@@ -17,17 +17,3 @@ jobs:
                -X POST \
                -d "{\"content\": \"🌐 [${{ github.repository }}] github.io 배포 성공! (${{ env.CURRENT_TIME }})\"}" \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
-
-  notify-failure:
-    runs-on: ubuntu-latest
-    if: github.event.build.status != 'built'
-    steps:
-      - name: Get Current Time
-        run: echo "CURRENT_TIME=$(TZ=Asia/Seoul date +'%m.%d %H:%M')" >> $GITHUB_ENV
-
-      - name: 🔴 Notify Discord on Failure
-        run: |
-          curl -H "Content-Type: application/json" \
-               -X POST \
-               -d "{\"content\": \"🚨 [${{ github.repository }}] github.io 배포 실패! (${{ env.CURRENT_TIME }})\"}" \
-               ${{ secrets.DISCORD_WEBHOOK_URL }}
