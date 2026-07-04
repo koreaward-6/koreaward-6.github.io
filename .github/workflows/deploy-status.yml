@@ -1,4 +1,4 @@
-name: Page Deployment Notification
+name: Discord Notification
 
 on:
   page_build: # index.html 등 소스 변경으로 인한 자동 빌드 시 트리거
