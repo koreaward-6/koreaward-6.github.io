@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Get Current Time
         run: echo "CURRENT_TIME=$(TZ=Asia/Seoul date +'%m.%d %H:%M')" >> $GITHUB_ENV
-		
+
       - name: 🟢 Notify Discord on Success
         run: |
           curl -H "Content-Type: application/json" \
@@ -24,7 +24,7 @@ jobs:
     steps:
       - name: Get Current Time
         run: echo "CURRENT_TIME=$(TZ=Asia/Seoul date +'%m.%d %H:%M')" >> $GITHUB_ENV
-		
+
       - name: 🔴 Notify Discord on Failure
         run: |
           curl -H "Content-Type: application/json" \
