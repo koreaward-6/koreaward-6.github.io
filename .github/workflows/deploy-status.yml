@@ -21,7 +21,7 @@ jobs:
 
       # 🔴 빌드 실패 시 디스코드 알림
       - name: Notify Discord on Failure
-        if: always() && github.event.build.status != 'built'
+        if: github.event.build.status == 'errored' || github.event.build.status == 'failed'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
