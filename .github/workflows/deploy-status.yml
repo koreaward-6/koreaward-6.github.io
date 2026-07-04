@@ -12,7 +12,7 @@ jobs:
         
       # 🟢 빌드 성공 시 디스코드 알림
       - name: Notify Discord on Success
-        if: success()
+        if: github.event.build.status == 'built'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
@@ -21,7 +21,7 @@ jobs:
 
       # 🔴 빌드 실패 시 디스코드 알림
       - name: Notify Discord on Failure
-        if: failure()
+        if: github.event.build.status != 'built'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
