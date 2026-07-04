@@ -4,29 +4,26 @@ on:
   page_build: # 깃허브 페이지 빌드가 발생했을 때 트리거
 
 jobs:
-  notify:
+  notify-success:
     runs-on: ubuntu-latest
+    if: |
+      github.event.build.status == 'built'
     steps:
-      # 깃허브가 배포를 성공했는지 실패했는지 확인하고 디스코드로 직접 전송
-      - name: Report Status
+      - name: 🟢 Notify Discord on Success
         run: |
-          # 깃허브 API를 통해 이 저장소의 최신 Pages 배포 상태를 가져옵니다.
-          STATUS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/pages/builds/latest" \
-            | jq -r '.status')
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content": "🌐 [${{ github.repository }}] github.io 웹사이트 배포 성공!"}' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-          echo "Current Pages status is: $STATUS"
-
-          if [ "$STATUS" = "built" ]; then
-            # 🟢 성공했을 때
-            curl -H "Content-Type: application/json" \
-                 -X POST \
-                 -d '{"content": "🌐 [${{ github.repository }}] github.io 웹사이트 배포 성공!"}' \
-                 ${{ secrets.DISCORD_WEBHOOK_URL }}
-          else
-            # 🔴 실패했을 때
-            curl -H "Content-Type: application/json" \
-                 -X POST \
-                 -d '{"content": "🚨 [${{ github.repository }}] github.io 빌드 또는 배포 실패!"}' \
-                 ${{ secrets.DISCORD_WEBHOOK_URL }}
-          fi
+  notify-failure:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.build.status != 'built'
+    steps:
+      - name: 🔴 Notify Discord on Failure
+        run: |
+          curl -H "Content-Type: application/json" \
+               -X POST \
+               -d '{"content": "🚨 [${{ github.repository }}] github.io 빌드 또는 배포 실패!"}' \
+               ${{ secrets.DISCORD_WEBHOOK_URL }}
