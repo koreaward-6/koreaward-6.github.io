@@ -1,29 +1,29 @@
 name: Page Deployment Notification
 
 on:
-  page_build: # 깃허브 페이지 빌드가 발생했을 때 트리거
+  page_build: # index.html 등 소스 변경으로 인한 자동 빌드 시 트리거
 
 jobs:
-  notify-success:
+  notify-discord:
     runs-on: ubuntu-latest
-    if: |
-      github.event.build.status == 'built'
     steps:
-      - name: 🟢 Notify Discord on Success
+      - name: Get Current Time
+        run: echo "CURRENT_TIME=$(TZ=Asia/Seoul date +'%m.%d %H:%M')" >> $GITHUB_ENV
+        
+      # 🟢 빌드 성공 시 디스코드 알림
+      - name: Notify Discord on Success
+        if: github.event.build.status == 'built'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "🌐 [${{ github.repository }}] github.io 배포 성공!"}' \
+               -d "{\"content\": \"🌐 [${{ github.repository }}] github.io 배포 성공! (${{ env.CURRENT_TIME }})\"}" \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
 
-  notify-failure:
-    runs-on: ubuntu-latest
-    if: |
-      github.event.build.status != 'built'
-    steps:
-      - name: 🔴 Notify Discord on Failure
+      # 🔴 빌드 실패 시 디스코드 알림
+      - name: Notify Discord on Failure
+        if: github.event.build.status != 'built'
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "🚨 [${{ github.repository }}] github.io 배포 실패!"}' \
+               -d "{\"content\": \"🚨 [${{ github.repository }}] github.io 배포 실패! (${{ env.CURRENT_TIME }})\"}" \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
