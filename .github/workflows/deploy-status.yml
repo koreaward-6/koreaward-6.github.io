@@ -13,7 +13,7 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "🌐 [${{ github.repository }}] github.io 웹사이트 배포 성공!"}' \
+               -d '{"content": "🌐 [${{ github.repository }}] github.io 배포 성공!"}' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
 
   notify-failure:
@@ -25,5 +25,5 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d '{"content": "🚨 [${{ github.repository }}] github.io 빌드 또는 배포 실패!"}' \
+               -d '{"content": "🚨 [${{ github.repository }}] github.io 배포 실패!"}' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
