@@ -18,7 +18,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "HTML 배포 결과",
-                   "description": "🌐 [${{ github.repository }}] index.html 배포 성공! (${{ env.CURRENT_TIME }})",
+                   "description": "🌐 [${{ github.repository }}] index.html 배포 **${{ job.status }}**! (${{ env.CURRENT_TIME }})",
                    "color": 5763719
                  }]
                }' \
