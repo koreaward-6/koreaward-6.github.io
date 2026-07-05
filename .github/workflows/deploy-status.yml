@@ -17,8 +17,8 @@ jobs:
                -X POST \
                -d '{
                  "embeds": [{
-                   "title": "github.io 배포 결과",
-                   "description": "🌐 [${{ github.repository }}] github.io 배포 성공! (${{ env.CURRENT_TIME }})",
+                   "title": "HTML 배포 결과",
+                   "description": "🌐 [${{ github.repository }}] index.html 배포 성공! (${{ env.CURRENT_TIME }})",
                    "color": 5763719
                  }]
                }' \
