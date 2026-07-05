@@ -15,5 +15,11 @@ jobs:
         run: |
           curl -H "Content-Type: application/json" \
                -X POST \
-               -d "{\"content\": \"🌐 [${{ github.repository }}] github.io 배포 성공! (${{ env.CURRENT_TIME }})\"}" \
+               -d '{
+                 "embeds": [{
+                   "title": "github.io 배포 결과",
+                   "description": "🌐 [${{ github.repository }}] github.io 배포 성공! (${{ env.CURRENT_TIME }})",
+                   "color": 5763719
+                 }]
+               }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
