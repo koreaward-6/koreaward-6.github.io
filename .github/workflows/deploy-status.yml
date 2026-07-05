@@ -51,11 +51,9 @@ jobs:
           if [ "${{ needs.deploy-pages.result }}" = "success" ]; then
             COLOR=5763719
             EMOJI="🌐"
-            RESULT="성공"
           else
             COLOR=15548997
             EMOJI="🚨"
-            RESULT="실패"
           fi
 
           curl -H "Content-Type: application/json" \
@@ -63,7 +61,7 @@ jobs:
                -d '{
                  "embeds": [{
                    "title": "HTML 배포 결과",
-                   "description": "'"$EMOJI"' [${{ github.repository }}] index.html 배포 '"$RESULT"'! 상태: **${{ needs.deploy-pages.result }}** (${{ env.CURRENT_TIME }})",
+                   "description": "'"$EMOJI"' [${{ github.repository }}] index.html 배포 **${{ needs.deploy-pages.result }}**! (${{ env.CURRENT_TIME }})",
                    "color": '"$COLOR"'
                  }]
                }' \
