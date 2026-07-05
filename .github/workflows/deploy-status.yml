@@ -5,7 +5,9 @@ on:
 
 jobs:
   notify-discord:
-    if: github.event.deployment.environment == 'github-pages'
+    if: |
+      github.event.deployment.environment == 'github-pages' &&
+      (github.event.deployment_status.state == 'success' || github.event.deployment_status.state == 'failure')
     runs-on: ubuntu-latest
     steps:
       - name: Get Current Time
@@ -13,7 +15,6 @@ jobs:
 
       - name: Notify Discord
         run: |
-          # 깃허브 배포 상태(success 또는 failure)에 따라 분기
           if [ "${{ github.event.deployment_status.state }}" = "success" ]; then
             COLOR=5763719
             EMOJI="🌐"
