@@ -1,25 +1,70 @@
 name: Discord Notification
 
 on:
-  page_build: # index.html 등 소스 변경으로 인한 자동 빌드 시 트리거
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
-  notify-success:
+  # 1단계: 직접 빌드하고 배포하기
+  deploy-pages:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    if: github.event.build.status == 'built'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 2단계: 1단계의 결과를 받아서 디스코드로 알림 보내기
+  notify-discord:
+    needs: deploy-pages
+    if: always()
+    runs-on: ubuntu-latest
     steps:
       - name: Get Current Time
         run: echo "CURRENT_TIME=$(TZ=Asia/Seoul date +'%m.%d %H:%M')" >> $GITHUB_ENV
 
-      - name: 🟢 Notify Discord on Success
+      - name: Notify Discord
         run: |
+          if [ "${{ needs.deploy-pages.result }}" = "success" ]; then
+            COLOR=5763719
+            EMOJI="🌐"
+            RESULT="성공"
+          else
+            COLOR=15548997
+            EMOJI="🚨"
+            RESULT="실패"
+          fi
+
           curl -H "Content-Type: application/json" \
                -X POST \
                -d '{
                  "embeds": [{
                    "title": "HTML 배포 결과",
-                   "description": "🌐 [${{ github.repository }}] index.html 배포 **${{ job.status }}**! (${{ env.CURRENT_TIME }})",
-                   "color": 5763719
+                   "description": "'"$EMOJI"' [${{ github.repository }}] index.html 배포 '"$RESULT"'! 상태: **${{ needs.deploy-pages.result }}** (${{ env.CURRENT_TIME }})",
+                   "color": '"$COLOR"'
                  }]
                }' \
                ${{ secrets.DISCORD_WEBHOOK_URL }}
