@@ -34,7 +34,7 @@
             letter-spacing: -0.5px;
         }
 
-		.date {
+        .date {
             font-size: 16px;
             font-weight: bold;
             color: #2b2d42;
@@ -70,14 +70,14 @@
             color: #007bff;
         }
 
-		.name-link {
+        .name-link {
             color: #007bff; /* 기본 주소 색상 (회색) */
-			text-decoration: none;
+            text-decoration: none;
         }
 
-		.name-link:hover {
-			text-decoration: underline;
-		}
+        .name-link:hover {
+            text-decoration: underline;
+        }
 
         /* 주소 */
         .address {
@@ -87,25 +87,25 @@
             line-height: 1.4;
         }
 
-		/* 주소 링크 */
-		.address-link {
-			color: #666; /* 기본 주소 색상 (회색) */
-			text-decoration: none;
-			transition: color 0.2s ease; /* 색상이 부드럽게 변하는 효과 (선택사항) */
-		}
+        /* 주소 링크 */
+        .address-link {
+            color: #666; /* 기본 주소 색상 (회색) */
+            text-decoration: none;
+            transition: color 0.2s ease; /* 색상이 부드럽게 변하는 효과 (선택사항) */
+        }
 
-		.address-link:hover {
-			color: #111;
-			text-decoration: underline;
-		}
+        .address-link:hover {
+            color: #111;
+            text-decoration: underline;
+        }
 
         .menu-image {
             width: 100%;
-			height: auto;
-			max-height: 550px; /* 너무 커지는 것을 방지하는 마지노선 */
-			border: 1px solid #ddd;
-			border-radius: 8px;
-			background-color: #fafafa;
+            height: auto;
+            max-height: 550px; /* 너무 커지는 것을 방지하는 마지노선 */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
         }
 
         /* 화면이 좁아지는 모바일 환경을 위한 반응형 조절 */
@@ -114,20 +114,35 @@
                 grid-template-columns: repeat(2, 1fr); /* 패드에서는 가로 2개 */
             }
         }
+
         @media (max-width: 768px) {
             .grid-container {
                 grid-template-columns: 1fr; /* 모바일에서는 가로 1개로 세로 정렬 */
             }
         }
 
-        .quote-middle {
-            display: block;
-            font-size: 15px;
-            font-weight: 400;
-            color: #777777;
-            margin: 10px auto 12px auto;
-            width: fit-content;
-            letter-spacing: -0.5px;
+        .bot-promo {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .bot-button {
+            display: inline-block;
+            background-color: #5865F2;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .bot-button:hover {
+            background-color: #4752C4;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -135,9 +150,13 @@
 
 <div class="title">
     <div class="main-title">🍱 가산디지털단지역 근처 구내식당 메뉴</div>
-    <div class="quote-middle">"매운맛을 먹으며 땀을 흘리는 것은 고통스러워서가 아니라, 몸속의 스트레스를 배출하는 의식이다."</div>
-    <div class="date">2026년 07월 31일 (금)</div>
-    <div style="display: none;">20260731055932</div>
+    <div class="bot-promo">
+        <a class="bot-button" href="https://koreanbots.dev/bots/1528635053813272667" target="_blank">
+            🚀 디스코드 봇으로 메뉴 자동 알림 받기
+        </a>
+    </div>
+    <div class="date">2026년 08월 01일 (토)</div>
+    <div style="display: none;">20260801125939</div>
 </div>
 
 <div class="grid-container">
@@ -176,7 +195,7 @@
 					서울 금천구 가산디지털1로 168 우림라이온스밸리 B동 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/wci7o/dJMcadJBv9W/ZlKl2KRkrYcL6EGFBGQl81/img_m.jpg' alt='더소울푸드 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/X8EUW/dJMcafOmRf5/zQK2HbDkKxWeU0xHC8YASk/img_m.jpg' alt='더소울푸드 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_nFfwj' target='_blank'>더푸드스케치</a></h2>
@@ -185,7 +204,7 @@
 					서울 금천구 가산디지털1로 196 에이스테크노타워10차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/bk96Ie/dJMcafHzBcx/reZWgCskkKIm0k91s3CsB0/img_m.jpg' alt='더푸드스케치 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/coLKwD/dJMcacRubdD/12nvz0BTC7U2uBngKNf4RK/img_m.jpg' alt='더푸드스케치 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_Rxkrxfn' target='_blank'>라온푸드</a></h2>
@@ -203,7 +222,7 @@
 					서울 금천구 벚꽃로 244 벽산 디지털 밸리 5차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/dawN5q/dJMcacqxSIe/wWU0stGO7Go88RpZJKyB60/img_m.jpg' alt='마이푸드 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/3C3La/dJMcacqyfXs/iFA2KmIwQIhoDfISiKJsj1/img_m.jpg' alt='마이푸드 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_DWnxlxj' target='_blank'>미가stx</a></h2>
@@ -230,7 +249,7 @@
 					서울 금천구 가산디지털1로 84 에이스하이엔드타워8차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/dk8Vvz/dJMcabrz0E6/INUfzWIq20efx6qstFkn8k/img_m.jpg' alt='미가푸드빌 에이스8차 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/c0pNSY/dJMcahL4y9Q/FaNpzkqKcR9i6Ng1A8VIa0/img_m.jpg' alt='미가푸드빌 에이스8차 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_bXxkxhb' target='_blank'>바른식탁</a></h2>
@@ -248,7 +267,7 @@
 					서울 금천구 가산디지털2로 143 가산어반워크2 2층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/cpt8Y4/dJMcagTYm3Y/qjqgv3KtCKa11pqikKHoA0/img_m.jpg' alt='밥(온) - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/7gfYF/dJMcahei0C9/5fKx5ljhbmWFhrV4IDaL3k/img_m.jpg' alt='밥(온) - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_axkixdn' target='_blank'>스타밸리푸드포유</a></h2>
@@ -257,7 +276,7 @@
 					서울 금천구 디지털로9길 99 스타밸리 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/chwJsz/dJMcaa0upKf/25JNHHeU0yIop2nbB3u7n0/img_m.jpg' alt='스타밸리푸드포유 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/bNDKSA/dJMcafHzBAL/IIjIcJeg1KyVStnItBVkkk/img_m.jpg' alt='스타밸리푸드포유 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_gdqxdn' target='_blank'>씽씽푸드</a></h2>
@@ -275,7 +294,7 @@
 					서울 금천구 가산디지털2로 144 현대테라타워 가산DK 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/gAGV8/dJMcaheiLWo/qbC9S0LoQUN8wwW3AhyZf1/img_m.jpg' alt='아이밀 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/cP3hQz/dJMcaiqFNNs/AApvkvl3l4b8uvNCOZKz9K/img_m.jpg' alt='아이밀 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_xnBzGn' target='_blank'>쿠킹스토리</a></h2>
@@ -293,7 +312,7 @@
 					서울 금천구 디지털로9길 68 대륭포스트타워5차 지하1층
 				</a>
 			</p>
-			<img class='menu-image' src='https://k.kakaocdn.net/dn/qN5dD/dJMcaf8uWvC/nfTwyOlnrsEoAPKGeKALh0/img_m.jpg' alt='쿡플러스 - 오늘의 메뉴입니다.'>
+			<img class='menu-image' src='https://k.kakaocdn.net/dn/V9XXN/dJMcaixvzwb/Lee613RYkpOG8Mj8rveoQ1/img_m.jpg' alt='쿡플러스 - 오늘의 메뉴입니다.'>
 		</div>
 		<div class='cafeteria-card'>
 			<h2 class='name'><a class='name-link' href='https://pf.kakao.com/_ECNfn' target='_blank'>퍼블릭가산 구내식당</a></h2>
@@ -310,10 +329,10 @@
 
 <script src="//wcs.pstatic.net/wcslog.js" type="text/javascript"></script>
 <script type="text/javascript">
-    if(!wcs_add) var wcs_add = {};
+    if (!wcs_add) var wcs_add = {};
     wcs_add["wa"] = "1989851bd0c1050";
-    if(window.wcs) {
-    wcs_do();
+    if (window.wcs) {
+        wcs_do();
     }
 </script>
 </body>
